@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý danh sách sản phẩm - Thuần HTML/CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="header-banner">
+            <h2>Quản lý danh sách sản phẩm</h2>
+            <p>Giao diện nhập liệu và hiển thị danh sách sản phẩm một cách trực quan, rõ ràng.</p>
+        </header>
+
+        <div class="main-layout">
+            
+            <section class="form-container">
+                <h3>Thêm sản phẩm mới</h3>
+                <p class="subtitle">Nhập đầy đủ thông tin để thêm sản phẩm vào danh sách</p>
+                
+                <form id="productForm">
+                    <div class="form-group">
+                        <label>Tên sản phẩm</label>
+                        <input type="text" id="prodName" placeholder="Nhập tên sản phẩm" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Danh mục</label>
+                        <select id="prodCategory" required>
+                            <option value="">-- Chọn danh mục --</option>
+                            <option value="Điện thoại">Điện thoại</option>
+                            <option value="Máy tính bảng">Máy tính bảng</option>
+                            <option value="Laptop">Laptop</option>
+                            <option value="Tai nghe">Tai nghe</option>
+                            <option value="Phụ kiện">Phụ kiện</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Giá</label>
+                        <input type="number" id="prodPrice" placeholder="Nhập giá" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Trạng thái còn hàng</label>
+                        <select id="prodStatus">
+                            <option value="true">Còn hàng</option>
+                            <option value="false">Hết hàng</option>
+                        </select>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn-submit">Thêm sản phẩm</button>
+                        <button type="button" id="btnReset" class="btn-reset">Làm mới form</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="table-container">
+                <h3>Danh sách sản phẩm</h3>
+                <p class="subtitle">Danh sách sản phẩm mẫu được hiển thị từ dữ liệu hệ thống</p>
+                
+                <div class="table-responsive">
+                    <table class="product-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 8%">STT</th>
+                                <th style="width: 42%">Tên sản phẩm</th>
+                                <th style="width: 20%">Danh mục</th>
+                                <th style="width: 15%">Giá</th>
+                                <th style="width: 15%">Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productTableBody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
